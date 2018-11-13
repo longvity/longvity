@@ -14,14 +14,11 @@ Migrate = Migrate(app)
 manage=Manager(app)
 manage.add_command('db',MigrateCommand)
 
-@app.route('/')
 
-
-
-def index():
-    return 'hello world2'
 
 
 if __name__ == '__main__':
     # app.run(debug=True)
+    print(app.url_map)
+
     manage.run()
