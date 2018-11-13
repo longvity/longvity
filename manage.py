@@ -24,7 +24,7 @@ Session()
 
 
 def index():
-    return 'hello world1'
+    return 'hello world2'
 
 
 if __name__ == '__main__':
