@@ -1,24 +1,18 @@
 from flask import Flask,session
-from config import  Config
+
 from flask_script import  Manager
-from flask_sqlalchemy import  SQLAlchemy
+
 from flask_migrate import  Migrate,MigrateCommand
-from flask_session import  Session
-from config import  config_dict
+
+from  info import  create_app,db
+
+app = create_app('development')
 
 
 
-
-
-app = Flask(__name__)
-app.config.from_object(Config)
-app.config.from_object(config_dict['production'])
-
-db =SQLAlchemy(app)
 Migrate = Migrate(app)
 manage=Manager(app)
 manage.add_command('db',MigrateCommand)
-Session()
 
 @app.route('/')
 
